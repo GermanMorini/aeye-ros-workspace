@@ -1,0 +1,30 @@
+services:
+  ros2:
+    build:
+      context: .
+      args:
+        USER_UID: ${UID:-1000}
+        USER_GID: ${GID:-1000}
+    image: ros2-humble-perception-ws
+    container_name: ros2
+    network_mode: host
+    privileged: true
+    group_add:
+      - "986"
+    volumes:
+      - ./src:/ros2_ws/src
+      - ./build:/ros2_ws/build
+      - ./install:/ros2_ws/install
+      - ./log:/ros2_ws/log
+      - /dev:/dev
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ${HOME}/.Xauthority:/home/ros/.Xauthority:rw
+    stdin_open: true
+    tty: true
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=/home/ros/.Xauthority
+      - QT_X11_NO_MITSHM=1
+      - TURTLEBOT3_MODEL=waffle
+      - GZ_SIM_RESOURCE_PATH=/opt/ros/humble/share:/home/ros/ws/install:/home/ros/ws/src
+      - IGN_GAZEBO_RESOURCE_PATH=/opt/ros/humble/share:/home/ros/ws/install:/home/ros/ws/src
