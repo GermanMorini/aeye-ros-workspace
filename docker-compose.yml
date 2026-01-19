@@ -9,6 +9,7 @@ services:
     container_name: ros2
     network_mode: host
     privileged: true
+    restart: unless-stopped
     group_add:
       - "986"
     volumes:

@@ -78,7 +78,7 @@ RUN rosdep init || true \
   && rosdep update
 
 # PAQUETES EXTRA
-RUN apt-get install -y --no-install-recommends ros-${ROS_DISTRO}-turtlebot3-gazebo
+RUN apt-get install -y --no-install-recommends ros-${ROS_DISTRO}-pointcloud-to-laserscan
 RUN rm -rf /var/lib/apt/lists/*
 
 ARG USERNAME=ros
@@ -94,6 +94,7 @@ COPY entrypoint.sh /ros_entrypoint.sh
 RUN chmod +x /ros_entrypoint.sh
 
 COPY .bashrc /home/ros/.bashrc
+COPY mapviz_gps.mvc /home/ros/.mapviz_config
 RUN chown ${USERNAME}:${USERNAME} /home/ros/.bashrc
 
 USER ${USERNAME}
