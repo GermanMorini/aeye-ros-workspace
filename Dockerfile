@@ -78,8 +78,11 @@ RUN rosdep init || true \
   && rosdep update
 
 # PAQUETES EXTRA
-RUN apt-get install -y --no-install-recommends ros-${ROS_DISTRO}-pointcloud-to-laserscan \
-      ros-${ROS_DISTRO}-nav2-rviz-plugins
+RUN apt-get install -y --no-install-recommends \
+      ros-${ROS_DISTRO}-pointcloud-to-laserscan \
+      ros-${ROS_DISTRO}-nav2-rviz-plugins \
+      libpcap-dev \
+      libyaml-cpp-dev
 RUN rm -rf /var/lib/apt/lists/*
 
 ARG USERNAME=ros
