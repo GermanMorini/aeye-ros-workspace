@@ -1,0 +1,108 @@
+[0.018s] Invoking command in '/ros2_ws/build/tile_map': AMENT_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/ros2_ws/install/mapviz/lib:/ros2_ws/install/mapviz_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/ros2_ws/install/mapviz_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /ros2_ws/src/mapviz/tile_map -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/ros2_ws/install/tile_map
+[0.131s] -- The CXX compiler identification is GNU 11.4.0
+[0.148s] -- Detecting CXX compiler ABI info
+[0.281s] -- Detecting CXX compiler ABI info - done
+[0.294s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.294s] -- Detecting CXX compile features
+[0.296s] -- Detecting CXX compile features - done
+[0.311s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.612s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.781s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.849s] -- Found mapviz: 2.6.1 (/ros2_ws/install/mapviz/share/mapviz/cmake)
+[1.024s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.032s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.044s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.061s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.084s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.176s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.183s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.351s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.387s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.451s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.471s] -- Looking for C++ include pthread.h
+[1.602s] -- Looking for C++ include pthread.h - found
+[1.605s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.723s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.725s] -- Found Threads: TRUE  
+[2.117s] -- Found swri_math_util: 3.8.7 (/opt/ros/humble/share/swri_math_util/cmake)
+[2.130s] -- Found swri_transform_util: 3.8.7 (/opt/ros/humble/share/swri_transform_util/cmake)
+[2.153s] -- Found GeographicLib: /usr/lib/aarch64-linux-gnu  
+[2.216s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[2.221s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[2.221s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.453s] -- Found OpenGL: /usr/lib/aarch64-linux-gnu/libOpenGL.so   
+[2.508s] -- Found GLEW: /usr/include (found version "2.2.0") 
+[2.513s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[2.514s] -- Checking for module 'yaml-cpp'
+[2.527s] --   Found yaml-cpp, version 0.7.0
+[2.555s] -- Checking for module 'jsoncpp'
+[2.578s] --   Found jsoncpp, version 1.9.5
+[2.792s] -- Configuring done
+[2.837s] -- Generating done
+[2.849s] -- Build files have been written to: /ros2_ws/build/tile_map
+[2.879s] Invoked command in '/ros2_ws/build/tile_map' returned '0': AMENT_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/ros2_ws/install/mapviz/lib:/ros2_ws/install/mapviz_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/ros2_ws/install/mapviz_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /ros2_ws/src/mapviz/tile_map -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/ros2_ws/install/tile_map
+[2.886s] Invoking command in '/ros2_ws/build/tile_map': AMENT_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/ros2_ws/install/mapviz/lib:/ros2_ws/install/mapviz_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/ros2_ws/install/mapviz_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /ros2_ws/build/tile_map -- -j4 -l4
+[2.997s] [  4%] Generating include/tile_map/moc_wmts_source.cpp
+[3.008s] [  8%] Generating include/tile_map/moc_bing_source.cpp
+[3.010s] [ 17%] Generating include/tile_map/moc_stadia_source.cpp
+[3.013s] [ 13%] Generating include/tile_map/moc_image_cache.cpp
+[3.030s] [ 21%] Generating include/tile_map/moc_tile_source.cpp
+[3.097s] [ 26%] Building CXX object CMakeFiles/tile_map.dir/src/image_cache.cpp.o
+[3.102s] [ 30%] Building CXX object CMakeFiles/tile_map.dir/src/texture_cache.cpp.o
+[3.104s] [ 34%] Building CXX object CMakeFiles/tile_map.dir/src/bing_source.cpp.o
+[3.123s] [ 39%] Building CXX object CMakeFiles/tile_map.dir/src/stadia_source.cpp.o
+[7.831s] [ 43%] Building CXX object CMakeFiles/tile_map.dir/src/tile_source.cpp.o
+[8.773s] [ 47%] Building CXX object CMakeFiles/tile_map.dir/src/wmts_source.cpp.o
+[11.599s] [ 52%] Building CXX object CMakeFiles/tile_map.dir/src/tile_map_view.cpp.o
+[35.623s] [ 56%] Building CXX object CMakeFiles/tile_map.dir/include/tile_map/moc_wmts_source.cpp.o
+[36.973s] [ 60%] Building CXX object CMakeFiles/tile_map.dir/include/tile_map/moc_bing_source.cpp.o
+[38.883s] [ 65%] Building CXX object CMakeFiles/tile_map.dir/include/tile_map/moc_stadia_source.cpp.o
+[39.990s] [ 69%] Building CXX object CMakeFiles/tile_map.dir/include/tile_map/moc_tile_source.cpp.o
+[41.160s] [ 73%] Building CXX object CMakeFiles/tile_map.dir/include/tile_map/moc_image_cache.cpp.o
+[43.035s] [ 78%] Linking CXX static library libtile_map.a
+[43.163s] [ 78%] Built target tile_map
+[43.179s] [ 82%] Generating ui_tile_map_config.h
+[43.330s] [ 86%] Generating include/tile_map/moc_tile_map_plugin.cpp
+[43.376s] [ 91%] Building CXX object CMakeFiles/tile_map_plugin.dir/src/tile_map_plugin.cpp.o
+[52.088s] [ 95%] Building CXX object CMakeFiles/tile_map_plugin.dir/include/tile_map/moc_tile_map_plugin.cpp.o
+[60.787s] [ 86%] Linking CXX shared library libtile_map_plugin.so
+[70.676s] [100%] Built target tile_map_plugin
+[70.715s] Invoked command in '/ros2_ws/build/tile_map' returned '0': AMENT_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/ros2_ws/install/mapviz/lib:/ros2_ws/install/mapviz_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/ros2_ws/install/mapviz_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /ros2_ws/build/tile_map -- -j4 -l4
+[70.728s] Invoking command in '/ros2_ws/build/tile_map': AMENT_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/ros2_ws/install/mapviz/lib:/ros2_ws/install/mapviz_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/ros2_ws/install/mapviz_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /ros2_ws/build/tile_map
+[70.749s] -- Install configuration: ""
+[70.755s] -- Execute custom install script
+[70.755s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map//mapviz_plugins.xml
+[70.780s] -- Symlinking: /ros2_ws/install/tile_map/share/ament_index/resource_index/package_run_dependencies/tile_map
+[70.799s] -- Symlinking: /ros2_ws/install/tile_map/share/ament_index/resource_index/parent_prefix_path/tile_map
+[70.824s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/environment/ament_prefix_path.sh
+[70.851s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/environment/ament_prefix_path.dsv
+[70.873s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/environment/path.sh
+[70.898s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/environment/path.dsv
+[70.925s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/local_setup.bash
+[70.937s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/local_setup.sh
+[70.966s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/local_setup.zsh
+[70.989s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/local_setup.dsv
+[71.014s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/package.dsv
+[71.040s] -- Symlinking: /ros2_ws/install/tile_map/share/ament_index/resource_index/packages/tile_map
+[71.074s] -- Symlinking: /ros2_ws/install/tile_map/share/ament_index/resource_index/mapviz__pluginlib__plugin/tile_map
+[71.099s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/cmake/ament_cmake_export_targets-extras.cmake
+[71.122s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/cmake/ament_cmake_export_dependencies-extras.cmake
+[71.148s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/cmake/tile_mapConfig.cmake
+[71.170s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/cmake/tile_mapConfig-version.cmake
+[71.196s] -- Symlinking: /ros2_ws/install/tile_map/share/tile_map/package.xml
+[71.221s] -- Installing: /ros2_ws/install/tile_map/include/tile_map
+[71.225s] -- Installing: /ros2_ws/install/tile_map/include/tile_map/tile_map
+[71.225s] -- Installing: /ros2_ws/install/tile_map/include/tile_map/tile_map/tile_map_view.h
+[71.225s] -- Installing: /ros2_ws/install/tile_map/include/tile_map/tile_map/tile_source.h
+[71.225s] -- Installing: /ros2_ws/install/tile_map/include/tile_map/tile_map/tile_map_plugin.h
+[71.225s] -- Installing: /ros2_ws/install/tile_map/include/tile_map/tile_map/image_cache.h
+[71.225s] -- Installing: /ros2_ws/install/tile_map/include/tile_map/tile_map/wmts_source.h
+[71.225s] -- Installing: /ros2_ws/install/tile_map/include/tile_map/tile_map/stadia_source.h
+[71.225s] -- Installing: /ros2_ws/install/tile_map/include/tile_map/tile_map/texture_cache.h
+[71.226s] -- Installing: /ros2_ws/install/tile_map/include/tile_map/tile_map/bing_source.h
+[71.226s] -- Installing: /ros2_ws/install/tile_map/lib/libtile_map.a
+[71.226s] -- Installing: /ros2_ws/install/tile_map/lib/libtile_map_plugin.so
+[71.234s] -- Set runtime path of "/ros2_ws/install/tile_map/lib/libtile_map_plugin.so" to ""
+[71.235s] -- Installing: /ros2_ws/install/tile_map/share/tile_map/cmake/export_tile_mapExport.cmake
+[71.236s] -- Installing: /ros2_ws/install/tile_map/share/tile_map/cmake/export_tile_mapExport-noconfig.cmake
+[71.257s] Invoked command in '/ros2_ws/build/tile_map' returned '0': AMENT_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/ros2_ws/install/mapviz/lib:/ros2_ws/install/mapviz_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/ros2_ws/install/mapviz_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /ros2_ws/build/tile_map

@@ -1,0 +1,5 @@
+-I/ros2_ws/src/mapviz/tile_map
+-I/ros2_ws/build/tile_map
+-o
+/ros2_ws/build/tile_map/include/tile_map/moc_bing_source.cpp
+/ros2_ws/src/mapviz/tile_map/include/tile_map/bing_source.h

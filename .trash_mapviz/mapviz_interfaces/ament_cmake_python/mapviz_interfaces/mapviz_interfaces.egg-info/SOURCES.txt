@@ -1,0 +1,8 @@
+setup.py
+mapviz_interfaces/__init__.py
+mapviz_interfaces.egg-info/PKG-INFO
+mapviz_interfaces.egg-info/SOURCES.txt
+mapviz_interfaces.egg-info/dependency_links.txt
+mapviz_interfaces.egg-info/top_level.txt
+mapviz_interfaces/srv/__init__.py
+mapviz_interfaces/srv/_add_mapviz_display.py

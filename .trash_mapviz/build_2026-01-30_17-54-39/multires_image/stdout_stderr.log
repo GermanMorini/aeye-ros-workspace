@@ -1,0 +1,60 @@
+Consolidate compiler generated dependencies of target multires_image
+[ 33%] Built target multires_image
+Consolidate compiler generated dependencies of target multires_widget
+[ 33%] Building CXX object CMakeFiles/multires_widget.dir/src/QGLMap.cpp.o
+[ 66%] Linking CXX static library libmultires_widget.a
+[ 66%] Built target multires_widget
+[ 66%] Building CXX object CMakeFiles/multires_view_node.dir/src/nodes/multires_view_node.cpp.o
+[ 70%] Building CXX object CMakeFiles/multires_view_node.dir/include/multires_image/moc_multires_view_node.cpp.o
+[ 83%] Linking CXX executable multires_view_node
+[ 83%] Built target multires_view_node
+[ 83%] Building CXX object CMakeFiles/multires_image_plugin.dir/src/multires_image_plugin.cpp.o
+[ 87%] Building CXX object CMakeFiles/multires_image_plugin.dir/include/multires_image/moc_multires_image_plugin.cpp.o
+[ 91%] Building CXX object CMakeFiles/multires_image_plugin.dir/src/multires_view.cpp.o
+Linking CXX shared library libmultires_image_plugin.so
+Built target multires_image_plugin
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /ros2_ws/install/multires_image/lib/multires_image/multires_view_node
+-- Up-to-date symlink: /ros2_ws/install/multires_image/lib/multires_image/mapviz_tile_loader
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image//mapviz_plugins.xml
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/environment/library_path.sh
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/environment/library_path.dsv
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/ament_index/resource_index/package_run_dependencies/multires_image
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/ament_index/resource_index/parent_prefix_path/multires_image
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/environment/path.sh
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/environment/path.dsv
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/local_setup.bash
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/local_setup.sh
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/local_setup.zsh
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/local_setup.dsv
+-- Symlinking: /ros2_ws/install/multires_image/share/multires_image/package.dsv
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/ament_index/resource_index/packages/multires_image
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/ament_index/resource_index/mapviz__pluginlib__plugin/multires_image
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/cmake/ament_cmake_export_targets-extras.cmake
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/cmake/multires_imageConfig.cmake
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/cmake/multires_imageConfig-version.cmake
+-- Up-to-date symlink: /ros2_ws/install/multires_image/share/multires_image/package.xml
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image/multires_image
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image/multires_image/multires_image_plugin.h
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image/multires_image/tile_set_layer.h
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image/multires_image/multires_view.h
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image/multires_image/tile_cache.h
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image/multires_image/QGLMap.h
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image/multires_image/multires_view_node.h
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image/multires_image/tile_set.h
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image/multires_image/tile.h
+-- Up-to-date: /ros2_ws/install/multires_image/include/multires_image/multires_image/tile_view.h
+-- Up-to-date: /ros2_ws/install/multires_image/lib/libmultires_image.a
+-- Up-to-date: /ros2_ws/install/multires_image/lib/libmultires_widget.a
+-- Installing: /ros2_ws/install/multires_image/lib/libmultires_image_plugin.so
+-- Set runtime path of "/ros2_ws/install/multires_image/lib/libmultires_image_plugin.so" to ""
+-- Up-to-date: /ros2_ws/install/multires_image/share/multires_image/launch
+-- Up-to-date: /ros2_ws/install/multires_image/share/multires_image/cmake/export_multires_imageExport.cmake
+-- Up-to-date: /ros2_ws/install/multires_image/share/multires_image/cmake/export_multires_imageExport-noconfig.cmake

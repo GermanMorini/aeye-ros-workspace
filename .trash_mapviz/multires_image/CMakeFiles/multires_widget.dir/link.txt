@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmultires_widget.a CMakeFiles/multires_widget.dir/src/tile_view.cpp.o CMakeFiles/multires_widget.dir/src/QGLMap.cpp.o CMakeFiles/multires_widget.dir/include/multires_image/moc_QGLMap.cpp.o
+/usr/bin/ranlib libmultires_widget.a

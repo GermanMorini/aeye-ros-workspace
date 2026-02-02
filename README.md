@@ -1,7 +1,7 @@
 # ROS 2 Docker Workspace (Nav2 + MAVROS)
 
 ## Descripción
-Este repositorio provee un workspace de ROS 2 Humble en Docker para el robot Salus (cuatriciclo grande de patrullaje autónomo). Incluye Nav2, Mapviz, MAVROS, ros2_control y herramientas de Gazebo (ros-gz).
+Este repositorio provee un workspace de ROS 2 Humble en Docker para el robot Salus (cuatriciclo grande de patrullaje autónomo). Incluye Nav2, MAVROS, ros2_control y herramientas de Gazebo (ros-gz). Mapviz se instala por `apt` en amd64 (no en ARM64 headless).
 
 ## Contexto del robot
 - Plataforma: Raspberry Pi 5
@@ -83,3 +83,6 @@ Si necesitas agregar más paquetes o dependencias al contenedor, hazlo a partir 
 
 ## Mapviz
 El archivo `mapviz_gps.mvc` se copia dentro del contenedor en `/home/ros/.mapviz_config`.
+
+En **amd64**, el Dockerfile instala Mapviz por `apt` automáticamente.
+En **ARM64 (Raspberry Pi)**, **no se instala Mapviz** por defecto (entorno headless).

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "mapviz_interfaces__py",
+		"source" : "/ros2_ws/build/mapviz_interfaces/mapviz_interfaces__py"
+	}
+}

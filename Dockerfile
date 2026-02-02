@@ -30,10 +30,6 @@ RUN apt-get update \
     ros-${ROS_DISTRO}-tf2-ros \
     ros-${ROS_DISTRO}-tf2-tools \
     ros-${ROS_DISTRO}-topic-tools \
-    ros-${ROS_DISTRO}-mapviz \
-    ros-${ROS_DISTRO}-mapviz-plugins \
-    ros-${ROS_DISTRO}-tile-map \
-    ros-${ROS_DISTRO}-multires-image \
     # --- ROBOT STATE & CONTROL ---
     ros-${ROS_DISTRO}-xacro \
     ros-${ROS_DISTRO}-robot-state-publisher \
@@ -57,6 +53,18 @@ RUN apt-get update \
     ros-${ROS_DISTRO}-rqt-reconfigure \
     ros-${ROS_DISTRO}-mavros \
     ros-${ROS_DISTRO}-mavros-extras
+
+# Mapviz: en amd64 hay binarios; en ARM64 se omite (headless).
+RUN arch="$(dpkg --print-architecture)" && \
+  if [ "$arch" = "amd64" ]; then \
+    apt-get update && apt-get install -y --no-install-recommends \
+      ros-${ROS_DISTRO}-mapviz \
+      ros-${ROS_DISTRO}-mapviz-plugins \
+      ros-${ROS_DISTRO}-tile-map \
+      ros-${ROS_DISTRO}-multires-image; \
+  else \
+    echo "Mapviz omitido en ARM64 (entorno headless)."; \
+  fi
 
 # MAVROS requiere datasets de GeographicLib para GPS
 RUN wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh \

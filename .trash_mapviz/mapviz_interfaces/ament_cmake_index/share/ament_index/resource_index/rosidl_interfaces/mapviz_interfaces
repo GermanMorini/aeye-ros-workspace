@@ -1,0 +1,4 @@
+srv/AddMapvizDisplay.idl
+srv/AddMapvizDisplay.srv
+srv/AddMapvizDisplay_Request.msg
+srv/AddMapvizDisplay_Response.msg

@@ -1,0 +1,6 @@
+-I/ros2_ws/src/mapviz/mapviz_plugins
+-I/ros2_ws/build/mapviz_plugins
+-DWFlags=WindowFlags
+-o
+/ros2_ws/build/mapviz_plugins/include/mapviz_plugins/moc_placeable_window_proxy.cpp
+/ros2_ws/src/mapviz/mapviz_plugins/include/mapviz_plugins/placeable_window_proxy.h

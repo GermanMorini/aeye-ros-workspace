@@ -1,0 +1,106 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-2a02386cd30215c13cbd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "multires_image",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "multires_image::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multires_image-667b02bc15b09d17f908.json",
+					"name" : "multires_image",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multires_image_plugin::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multires_image_plugin-af3ed97dfb8b67813d76.json",
+					"name" : "multires_image_plugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multires_image_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multires_image_uninstall-9b1605d13da94f8def71.json",
+					"name" : "multires_image_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multires_view_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multires_view_node-79eeee5ad08a0b18e901.json",
+					"name" : "multires_view_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multires_widget::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multires_widget-d006a53401c3297e7e0a.json",
+					"name" : "multires_widget",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-9bb521266c3e1c0f3e44.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/ros2_ws/build/multires_image",
+		"source" : "/ros2_ws/src/mapviz/multires_image"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

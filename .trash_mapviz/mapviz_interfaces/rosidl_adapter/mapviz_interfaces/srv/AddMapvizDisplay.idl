@@ -1,0 +1,48 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from mapviz_interfaces/srv/AddMapvizDisplay.srv
+// generated code does not contain a copyright notice
+
+#include "marti_common_msgs/msg/KeyValue.idl"
+
+module mapviz_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "Add or updates a mapviz display.")
+    struct AddMapvizDisplay_Request {
+      @verbatim (language="comment", text=
+        "The name of the display.")
+      string name;
+
+      @verbatim (language="comment", text=
+        "The plugin type.")
+      string type;
+
+      @verbatim (language="comment", text=
+        "The display order. 1 corresponds" "\n"
+        "to the first displayed, 2 to the" "\n"
+        "second, -1 to last, and -2 to the" "\n"
+        "second to last, etc.  0 will keep" "\n"
+        "the current display order of an" "\n"
+        "existing display and give a new" "\n"
+        "display the last display order.")
+      int32 draw_order;
+
+      @verbatim (language="comment", text=
+        "If the display should be visible.")
+      boolean visible;
+
+      @verbatim (language="comment", text=
+        "Configuration properties.")
+      sequence<marti_common_msgs::msg::KeyValue> properties;
+    };
+    struct AddMapvizDisplay_Response {
+      @verbatim (language="comment", text=
+        "indicate successful run of triggered service")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "informational, e.g. for error messages")
+      string message;
+    };
+  };
+};

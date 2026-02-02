@@ -1,0 +1,6 @@
+{
+  "package_name": "mapviz_interfaces",
+  "non_idl_tuples": [
+    "/ros2_ws/src/mapviz/mapviz_interfaces:srv/AddMapvizDisplay.srv"
+  ]
+}

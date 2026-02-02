@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmultires_image.a CMakeFiles/multires_image.dir/src/tile.cpp.o CMakeFiles/multires_image.dir/src/tile_cache.cpp.o CMakeFiles/multires_image.dir/src/tile_set.cpp.o CMakeFiles/multires_image.dir/src/tile_set_layer.cpp.o CMakeFiles/multires_image.dir/include/multires_image/moc_tile_cache.cpp.o
+/usr/bin/ranlib libmultires_image.a

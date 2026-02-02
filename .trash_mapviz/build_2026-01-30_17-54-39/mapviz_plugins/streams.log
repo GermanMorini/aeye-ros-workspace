@@ -1,0 +1,30 @@
+[0.049s] Invoking command in '/ros2_ws/build/mapviz_plugins': AMENT_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/ros2_ws/install/mapviz:/ros2_ws/install/mapviz_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/ros2_ws/install/mapviz/lib:/ros2_ws/install/mapviz_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/ros2_ws/install/mapviz_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /ros2_ws/build/mapviz_plugins -- -j4 -l4
+[0.306s] Consolidate compiler generated dependencies of target mapviz_plugins
+[0.369s] [  1%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_float_plugin.cpp.o
+[16.381s] [  3%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_marker_plugin.cpp.o
+[28.020s] [  4%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_measuring_plugin.cpp.o
+[36.417s] [  4%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_navsat_plugin.cpp.o
+[44.676s] [  4%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_occupancy_grid_plugin.cpp.o
+[53.799s] [  6%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_odometry_plugin.cpp.o
+[62.700s] [  7%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_path_plugin.cpp.o
+[69.668s] [  8%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_placeable_window_proxy.cpp.o
+[70.740s] [  9%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_plan_route_plugin.cpp.o
+[77.341s] [ 10%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_point_click_publisher_plugin.cpp.o
+[83.377s] [ 11%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_pointcloud2_plugin.cpp.o
+[89.732s] [ 12%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_point_drawing_plugin.cpp.o
+[93.746s] [ 12%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_pose_plugin.cpp.o
+[95.776s] [ 15%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_laserscan_plugin.cpp.o
+[97.817s] [ 16%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_robot_image_plugin.cpp.o
+[108.239s] [ 17%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_string_plugin.cpp.o
+[113.258s] [ 17%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_textured_marker_plugin.cpp.o
+[114.282s] [ 18%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_route_plugin.cpp.o
+[114.771s] [ 18%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_gps_plugin.cpp.o
+[115.804s] [ 18%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_tf_frame_plugin.cpp.o
+[134.890s] [ 21%] Building CXX object CMakeFiles/mapviz_plugins.dir/src/canvas_click_filter.cpp.o
+[136.278s] [ 21%] Building CXX object CMakeFiles/mapviz_plugins.dir/src/coordinate_picker_plugin.cpp.o
+[142.856s] [ 22%] Building CXX object CMakeFiles/mapviz_plugins.dir/src/disparity_plugin.cpp.o
+[157.603s] [ 23%] Building CXX object CMakeFiles/mapviz_plugins.dir/src/draw_polygon_plugin.cpp.o
+[166.155s] [ 24%] Building CXX object CMakeFiles/mapviz_plugins.dir/src/float_plugin.cpp.o
+[169.170s] [ 25%] Building CXX object CMakeFiles/mapviz_plugins.dir/src/gps_plugin.cpp.o
+[171.208s] [ 26%] Building CXX object CMakeFiles/mapviz_plugins.dir/src/attitude_indicator_plugin.cpp.o
+[173.231s] [ 26%] Building CXX object CMakeFiles/mapviz_plugins.dir/include/mapviz_plugins/moc_topic_select.cpp.o
