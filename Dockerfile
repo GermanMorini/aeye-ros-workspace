@@ -99,6 +99,8 @@ ARG USER_GID=1000
 
 RUN groupadd --gid ${USER_GID} ${USERNAME} \
   && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} \
+  && groupadd --gid 20 dialout || true \
+  && usermod -aG dialout,tty ${USERNAME} \
   && mkdir -p /ros2_ws \
   && chown -R ${USERNAME}:${USERNAME} /ros2_ws
 

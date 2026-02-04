@@ -12,6 +12,7 @@ services:
     restart: unless-stopped
     group_add:
       - "986"
+      - "20"
     volumes:
       - ./src:/ros2_ws/src
       - ./build:/ros2_ws/build

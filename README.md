@@ -69,6 +69,32 @@ Después de crear o agregar paquetes, compila:
 - `tools/create_pkg.sh <nombre> [args...]` - crea un paquete ROS 2 (por defecto ament_python + rclpy)
 - `tools/compile-ros.sh [pkgs...]` - compila con colcon dentro del contenedor
 
+## Testear Pixhawk (IMU) con el paquete `sensores`
+1) Levanta el contenedor si no está corriendo:
+```bash
+docker compose up -d
+```
+
+2) Compila el paquete:
+```bash
+./tools/compile-ros.sh sensores
+```
+
+3) Ejecuta el driver del Pixhawk (ajusta `serial_port` si hace falta):
+```bash
+./tools/exec.sh "source /ros2_ws/install/setup.bash; ros2 run sensores pixhawk_driver --ros-args -p serial_port:=/dev/ttyACM0 -p baudrate:=921600"
+```
+
+4) En otra terminal, verifica la IMU:
+```bash
+./tools/exec.sh "source /ros2_ws/install/setup.bash; ros2 topic list | grep imu"
+./tools/exec.sh "source /ros2_ws/install/setup.bash; ros2 topic hz /imu/data"
+./tools/exec.sh "source /ros2_ws/install/setup.bash; ros2 topic echo /imu/data --qos-profile sensor_data --once"
+```
+
+Si ves `Permission denied` en `/dev/ttyACM0`, verifica que el contenedor tenga `dialout` (GID 20) en `docker-compose.yml`
+o ejecuta temporalmente con `./tools/root-exec.sh`.
+
 ## Detalles del contenedor
 - Imagen base: `ros:humble-perception`
 - Nombre del contenedor: `ros2`
