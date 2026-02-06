@@ -68,6 +68,17 @@ Después de crear o agregar paquetes, compila:
 - `tools/root-exec.sh` - abre una shell como root dentro del contenedor
 - `tools/create_pkg.sh <nombre> [args...]` - crea un paquete ROS 2 (por defecto ament_python + rclpy)
 - `tools/compile-ros.sh [pkgs...]` - compila con colcon dentro del contenedor
+- `tools/healthcheck-lidar.sh` - valida `/scan_3d`, `/scan` y TF basico (LiDAR)
+
+## Healthcheck de LiDAR/TF (Docker)
+Para validar rapidamente que llegan `/scan_3d` y que los TF estan presentes:
+```bash
+./tools/healthcheck-lidar.sh
+```
+Opcional: pasar el nombre del contenedor si no es `ros2`:
+```bash
+./tools/healthcheck-lidar.sh mi_contenedor
+```
 
 ## Testear Pixhawk (IMU) con el paquete `sensores`
 1) Levanta el contenedor si no está corriendo:
