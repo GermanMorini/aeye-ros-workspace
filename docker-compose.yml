@@ -28,9 +28,5 @@ services:
       - XAUTHORITY=/home/ros/.Xauthority
       - QT_X11_NO_MITSHM=1
       - TURTLEBOT3_MODEL=waffle
-      - PIGPIOD_HOST=${PIGPIOD_HOST:-127.0.0.1}
-      - PIGPIOD_PORT=${PIGPIOD_PORT:-8888}
-      - PIGPIO_ADDR=${PIGPIOD_HOST:-127.0.0.1}
-      - PIGPIO_PORT=${PIGPIOD_PORT:-8888}
       - GZ_SIM_RESOURCE_PATH=/opt/ros/humble/share:/home/ros/ws/install:/home/ros/ws/src
       - IGN_GAZEBO_RESOURCE_PATH=/opt/ros/humble/share:/home/ros/ws/install:/home/ros/ws/src
