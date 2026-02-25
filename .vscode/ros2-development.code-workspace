@@ -63,14 +63,11 @@
 		"version": "2.0.0",
 		"tasks": [
 			{
-				"label": "🔄 Hacer git fetch",
-				"detail": "Hace git fetch para obtener cambios remotos",
+				"label": "🔄 Hacer git pull",
+				"detail": "Actualiza workspace y repos en src (clona faltantes definidos en tools/src-repos.txt)",
 				"type": "shell",
-				"command": "git fetch",
-				"problemMatcher": [],
-				"runOptions": {
-					"runOn": "folderOpen"
-				}
+				"command": "${workspaceFolder}/tools/init-workspace.sh",
+				"problemMatcher": []
 			},
 			{
 				"label": "🔧 RECOMPILAR",
