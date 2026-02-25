@@ -70,7 +70,7 @@
 				"problemMatcher": []
 			},
 			{
-				"label": "🔧 RECOMPILAR",
+				"label": "🔧 RECOMPILAR DOCKER",
 				"type": "shell",
 				"command": "docker compose up -d --build",
 				"problemMatcher": []
@@ -82,13 +82,13 @@
 				"problemMatcher": []
 			},
 			{
-				"label": "🚀 LEVANTAR",
+				"label": "🚀 LEVANTAR DOCKER",
 				"type": "shell",
 				"command": "docker compose up -d",
 				"problemMatcher": []
 			},
 			{
-				"label": "❌ DETENER",
+				"label": "❌ DETENER DOCKER",
 				"type": "shell",
 				"command": "docker compose down",
 				"problemMatcher": []
@@ -97,6 +97,12 @@
 				"label": "⚙️ COMPILAR ROS",
 				"type": "shell",
 				"command": "sh tools/compile-ros.sh",
+				"problemMatcher": []
+			},
+			{
+				"label": "🖥️ LANZAR SIMULACION",
+				"type": "shell",
+				"command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py",
 				"problemMatcher": []
 			}
 		],
