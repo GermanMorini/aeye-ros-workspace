@@ -106,23 +106,6 @@ docker compose up -d
 Si ves `Permission denied` en `/dev/ttyACM0`, verifica que el contenedor tenga `dialout` (GID 20) en `docker-compose.yml`
 o ejecuta temporalmente con `./tools/root-exec.sh`.
 
-## Odometria de ruedas UART invertida (pigpio + Docker)
-1) En el host (Raspberry), instala y levanta `pigpiod`:
-```bash
-sudo apt install -y pigpio python3-pigpio
-sudo systemctl enable --now pigpiod
-```
-
-2) Reconstruye/levanta Docker (compose ya exporta `PIGPIOD_HOST/PIGPIOD_PORT` al contenedor):
-```bash
-docker compose up -d --build
-```
-
-3) Ejecuta el nodo con traza de recepcion:
-```bash
-./tools/exec.sh "source /ros2_ws/install/setup.bash; ros2 launch sensores wheel_odom.launch.py gpio_rx_pin:=5 baudrate:=2000 log_rx_frames:=true"
-```
-
 ## Detalles del contenedor
 - Imagen base: `ros:humble-perception`
 - Nombre del contenedor: `ros2`
