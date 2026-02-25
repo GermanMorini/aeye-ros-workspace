@@ -104,6 +104,12 @@
 				"type": "shell",
 				"command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py",
 				"problemMatcher": []
+			},
+			{
+				"label": "📐 EDITOR DE POLIGONOS",
+				"type": "shell",
+				"command": "sh tools/exec.sh ros2 launch map_tools zone_server.launch.py",
+				"problemMatcher": []
 			}
 		],
 		"inputs": [
