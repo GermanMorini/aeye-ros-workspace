@@ -81,7 +81,8 @@ RUN python3 -m pip install --upgrade pip \
     matplotlib==3.7.0 \
     "websockets>=11.0.0" \
     pyserial==3.5 \
-    pymavlink==2.4.43
+    pymavlink==2.4.43 \
+    pytest>=8.0
 
 RUN rosdep init || true \
   && rosdep update

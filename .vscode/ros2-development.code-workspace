@@ -72,7 +72,7 @@
 			{
 				"label": "🔧 RECOMPILAR DOCKER",
 				"type": "shell",
-				"command": "docker compose up -d --build",
+				"command": "docker compose build ros2",
 				"problemMatcher": []
 			},
 			{
@@ -108,7 +108,7 @@
 			{
 				"label": "📐 EDITOR DE POLIGONOS",
 				"type": "shell",
-				"command": "sh tools/exec.sh ros2 launch map_tools zone_server.launch.py",
+				"command": "sh tools/exec.sh ros2 launch map_tools no_go_editor.launch.py",
 				"problemMatcher": []
 			}
 		],
