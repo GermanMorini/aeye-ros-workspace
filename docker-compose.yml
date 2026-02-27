@@ -15,6 +15,7 @@ services:
       - "20"
     volumes:
       - ./src:/ros2_ws/src
+      - ./tools:/ros2_ws/tools
       - ./build:/ros2_ws/build
       - ./install:/ros2_ws/install
       - ./log:/ros2_ws/log
