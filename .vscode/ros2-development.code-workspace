@@ -110,6 +110,12 @@
 				"type": "shell",
 				"command": "sh tools/exec.sh ros2 launch map_tools no_go_editor.launch.py",
 				"problemMatcher": []
+			},
+			{
+				"label": "⌨️ TELEOP TWIST KEYBOARD",
+				"type": "shell",
+				"command": "sh tools/exec.sh ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/cmd_vel_safe",
+				"problemMatcher": []
 			}
 		],
 		"inputs": [
