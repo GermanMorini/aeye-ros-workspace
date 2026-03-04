@@ -26,7 +26,7 @@ clone_missing_src_repos() {
     return 0
   fi
 
-  while read -r rel_path url; do
+  while read -r rel_path url || [[ -n "${rel_path:-}" ]]; do
     [[ -n "${rel_path}" ]] || continue
     [[ "${rel_path}" =~ ^# ]] && continue
 
