@@ -4,7 +4,9 @@
 			"path": ".."
 		}
 	],
-	"settings": {},
+	"settings": {
+		"task.allowAutomaticTasks": "on"
+	},
 	"launch": {
 		"version": "0.2.0",
 		"configurations": [
@@ -62,6 +64,19 @@
 	"tasks": {
 		"version": "2.0.0",
 		"tasks": [
+			{
+				"label": "🔐 xhost local root (auto)",
+				"type": "shell",
+				"detail": "Es para activar la visualización gráfica de programas dentro del contenedor",
+				"command": "echo \"xhost auto task\"",
+				"linux": {
+					"command": "bash -lc 'command -v xhost >/dev/null 2>&1 && xhost +local:root || true'"
+				},
+				"runOptions": {
+					"runOn": "folderOpen"
+				},
+				"problemMatcher": []
+			},
 			{
 				"label": "🔄 Hacer git pull",
 				"detail": "Actualiza workspace y repos en src (clona faltantes definidos en tools/src-repos.txt)",
