@@ -27,6 +27,7 @@
 - Navigation package:
   - `ros2 launch navegacion_gps simulacion.launch.py`
   - `ros2 launch navegacion_gps real.launch.py`
+  - `ros2 launch navegacion_gps full_stack.launch.py`
   - `ros2 launch navegacion_gps navegacion.launch.py`
   - `ros2 launch navegacion_gps dual_ekf_navsat.launch.py`
   - `ros2 launch navegacion_gps rviz_real.launch.py`
