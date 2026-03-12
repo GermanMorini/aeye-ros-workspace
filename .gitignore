@@ -1,7 +1,11 @@
+# archivos ignorados
 **/__pycache__
 log
 build
 install
-src
+src/*
 *.png
 *.jpg
+
+# archivos incluidos
+!src/interfaces
