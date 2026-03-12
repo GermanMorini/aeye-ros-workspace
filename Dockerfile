@@ -80,6 +80,7 @@ RUN python3 -m pip install --upgrade pip \
     flask==2.3.0 \
     matplotlib==3.7.0 \
     "websockets>=11.0.0" \
+    onvif-zeep \
     pyserial==3.5 \
     pymavlink==2.4.43 \
     pytest>=8.0
