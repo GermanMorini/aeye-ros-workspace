@@ -7,3 +7,6 @@ float64 cmd_vel_linear_x
 float64 cmd_vel_angular_z
 float64 robot_lat
 float64 robot_lon
+int32 nav_result_status
+string nav_result_text
+uint32 nav_result_event_id
