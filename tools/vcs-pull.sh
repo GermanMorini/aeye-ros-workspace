@@ -36,9 +36,17 @@ echo "[1/3] Actualizando repo raíz..."
 git -C "${WORKSPACE_DIR}" pull --ff-only
 
 echo "[2/3] Importando repos definidos en .repos..."
-vcs-import "${IMPORT_BASE_DIR}" < "${REPOS_FILE}"
+import_failed=0
+if ! vcs-import "${IMPORT_BASE_DIR}" < "${REPOS_FILE}"; then
+  import_failed=1
+  echo "Warning: vcs-import terminó con errores. Continuando con vcs-pull..." >&2
+fi
 
 echo "[3/3] Haciendo pull de repos en src..."
 vcs-pull "${SRC_DIR}"
 
-echo "Workspace actualizado."
+if (( import_failed )); then
+  echo "Workspace actualizado con advertencias: vcs-import tuvo errores, pero vcs-pull se ejecutó."
+else
+  echo "Workspace actualizado."
+fi
