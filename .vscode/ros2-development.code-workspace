@@ -77,31 +77,37 @@
 				},
 				"problemMatcher": []
 			},
-				{
-					"label": "🔄 VCS import/pull",
-					"detail": "Actualiza workspace y repos en src usando vcs + .repos",
-					"type": "shell",
-					"command": "${workspaceFolder}/tools/vcs-import.sh",
-					"problemMatcher": []
-				},
-					{
-						"label": "📋 VCS Status",
-						"detail": "Muestra el estado del workspace y de todos los repos en src",
-						"type": "shell",
-						"command": "${workspaceFolder}/tools/vcs-status.sh",
-						"problemMatcher": []
-					},
-					{
-						"label": "📤 VCS Push",
-						"detail": "Hace push del workspace y de los repos en src",
-						"type": "shell",
-						"command": "${workspaceFolder}/tools/vcs-push.sh",
-						"problemMatcher": []
-					},
-					{
-						"label": "🔧 RECOMPILAR DOCKER",
-						"type": "shell",
-						"command": "docker compose build ros2",
+			{
+				"label": "🔄 VCS import/pull",
+				"detail": "Actualiza workspace y repos en src usando vcs + .repos",
+				"type": "shell",
+				"command": "${workspaceFolder}/tools/vcs-import.sh",
+				"problemMatcher": []
+			},
+			{
+				"label": "📋 VCS Status",
+				"detail": "Muestra el estado del workspace y de todos los repos en src",
+				"type": "shell",
+				"command": "${workspaceFolder}/tools/vcs-status.sh",
+				"problemMatcher": []
+			},
+			{
+				"label": "📤 VCS Push",
+				"detail": "Hace push del workspace y de los repos en src",
+				"type": "shell",
+				"command": "${workspaceFolder}/tools/vcs-push.sh",
+				"problemMatcher": []
+			},
+			{
+				"label": "🔧 RECOMPILAR DOCKER",
+				"type": "shell",
+				"command": "docker compose build ros2",
+				"problemMatcher": []
+			},
+			{
+				"label": "🖼️ VER FRAMES",
+				"type": "shell",
+				"command": "sh tools/exec.sh ros2 run tf2_tools view_frames",
 				"problemMatcher": []
 			},
 			{
