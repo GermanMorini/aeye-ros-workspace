@@ -1,125 +1,86 @@
-# ROS 2 Docker Workspace (Nav2 + MAVROS)
+# AEye ROS 2 Workspace
 
-## Descripción
-Este repositorio provee un workspace de ROS 2 Humble en Docker para el robot Salus (cuatriciclo grande de patrullaje autónomo). Incluye Nav2, MAVROS, ros2_control y herramientas de Gazebo (ros-gz). Mapviz se instala por `apt` en amd64 (no en ARM64 headless).
+Workspace ROS 2 Humble para el robot Salus. El repositorio combina paquetes propios de navegacion, sensores, control de actuadores e interfaces, junto con dependencias vendorizadas del LiDAR RoboSense.
 
-## Contexto del robot
-- Plataforma: Raspberry Pi 5
-- Hardware: Pixhawk 6X + DroneCAN F9P (GPS), lidar, odometría de ruedas
-- Acceso: `ssh salus`
-- Workspace ROS 2 en el robot: `~/ros2_ws`
-- Código de referencia de controladores: `~/codigo/RASPY_SALUS`
+## Paquetes del workspace
+- Propios:
+  - `interfaces`
+  - `controller_server`
+  - `map_tools`
+  - `navegacion_gps`
+  - `sensores`
+- Terceros vendorizados:
+  - `rslidar_msg`
+  - `rslidar_sdk`
 
-## Requisitos
-- Docker y Docker Compose v2
-- Host Linux con X11 si usas RViz/Mapviz
-- Permisos para acceder a `/dev` (el contenedor corre en modo privilegiado)
+Cada paquete bajo `src/` es un repositorio git anidado. Revisa estado y rama por paquete antes de hacer cambios o releases.
 
-## Inicio rápido
-1) Crear directorios locales del workspace:
-```bash
-./RUNME.sh
-```
+## Launches canónicos
+- `ros2 launch navegacion_gps simulacion.launch.py`
+- `ros2 launch navegacion_gps real.launch.py`
+- `ros2 launch navegacion_gps rviz_real.launch.py`
+- `ros2 launch sensores pixhawk.launch.py`
+- `ros2 launch sensores rs16.launch.py`
+- `ros2 launch map_tools no_go_editor.launch.py`
+- `ros2 launch controller_server controller_server.launch.py`
 
-2) Construir y levantar el contenedor:
+## Arquitectura operativa
+- Nav2 publica `/cmd_vel`.
+- `nav2_collision_monitor` publica `/cmd_vel_safe`.
+- `nav_command_server` arbitra `/cmd_vel_safe` y comandos manuales web en `/cmd_vel_teleop`.
+- `nav_command_server` publica `/cmd_vel_final` (`interfaces/msg/CmdVelFinal`).
+- `controller_server` consume `/cmd_vel_final` y lo traduce al protocolo UART v2 del actuador.
+- El LiDAR RS16 publica `/scan_3d` y `pointcloud_to_laserscan` publica `/scan`.
+- Localizacion:
+  - entradas: `/imu/data`, `/gps/fix`, `/odom`
+  - salidas: `/odometry/local`, `/odometry/gps`
+  - TF esperada: `map -> odom -> base_footprint`
+
+## Flujo Docker recomendado
+1. Levanta el contenedor:
 ```bash
 docker compose up -d --build
 ```
-
-3) Abrir una shell dentro del contenedor:
+2. Compila el workspace o paquetes puntuales:
+```bash
+./tools/compile-ros.sh
+./tools/compile-ros.sh interfaces controller_server map_tools navegacion_gps sensores
+```
+3. Ejecuta un shell en el contenedor:
 ```bash
 ./tools/exec.sh
 ```
 
-4) Compilar el workspace (todo o paquetes específicos):
-```bash
-./tools/compile-ros.sh
-./tools/compile-ros.sh pkg1 pkg2
-```
-
-## Crear paquetes en `src`
-Opción A: crear un paquete nuevo desde el contenedor (recomendado):
-```bash
-./tools/create_pkg.sh mi_paquete
-./tools/create_pkg.sh mi_paquete --build-type ament_cmake --dependencies rclcpp std_msgs
-```
-
-Opción B: crear el paquete a mano dentro de `src`:
-```bash
-mkdir -p src/mi_paquete
-```
-Luego agrega los archivos típicos del paquete (`package.xml`, `CMakeLists.txt` o `setup.py`, etc.).
-
-## Agregar paquetes ya existentes a `src`
-- Copiar o clonar el paquete dentro de `src`:
-```bash
-cp -R /ruta/mi_paquete src/
-# o
-git clone <repo> src/mi_paquete
-```
-
-Después de crear o agregar paquetes, compila:
-```bash
-./tools/compile-ros.sh
-```
-
 ## Scripts útiles
-- `tools/exec.sh` - abre una shell o ejecuta un comando dentro del contenedor
-- `tools/root-exec.sh` - abre una shell como root dentro del contenedor
-- `tools/create_pkg.sh <nombre> [args...]` - crea un paquete ROS 2 (por defecto ament_python + rclpy)
-- `tools/compile-ros.sh [pkgs...]` - compila con colcon dentro del contenedor
-- `tools/healthcheck-lidar.sh` - valida `/scan_3d`, `/scan` y TF basico (LiDAR)
+- `./tools/exec.sh`: shell o comando dentro del contenedor.
+- `./tools/root-exec.sh`: shell como root dentro del contenedor.
+- `./tools/compile-ros.sh`: build con `colcon`.
+- `./tools/launch_real_nav.sh`: levanta `navegacion_gps real.launch.py`.
+- `./tools/launch_real_rviz.sh`: levanta `navegacion_gps rviz_real.launch.py`.
+- `./tools/launch_controller.sh`: levanta `controller_server controller_server.launch.py`.
+- `./tools/launch_no_go_editor.sh`: levanta `map_tools no_go_editor.launch.py`.
+- `./tools/healthcheck-lidar.sh`: chequeo rápido de `/scan_3d`, `/scan` y TF.
 
-## Healthcheck de LiDAR/TF (Docker)
-Para validar rapidamente que llegan `/scan_3d` y que los TF estan presentes:
+## Validación sugerida
+Build mínimo dentro del contenedor:
 ```bash
-./tools/healthcheck-lidar.sh
-```
-Opcional: pasar el nombre del contenedor si no es `ros2`:
-```bash
-./tools/healthcheck-lidar.sh mi_contenedor
-```
-
-## Testear Pixhawk (IMU) con el paquete `sensores`
-1) Levanta el contenedor si no está corriendo:
-```bash
-docker compose up -d
+./tools/compile-ros.sh interfaces controller_server map_tools navegacion_gps sensores
 ```
 
-2) Compila el paquete:
+Smoke de ejecutables:
 ```bash
-./tools/compile-ros.sh sensores
+./tools/exec.sh "source /opt/ros/humble/setup.bash && source /ros2_ws/install/setup.bash && ros2 pkg executables navegacion_gps"
+./tools/exec.sh "source /opt/ros/humble/setup.bash && source /ros2_ws/install/setup.bash && ros2 pkg executables controller_server"
+./tools/exec.sh "source /opt/ros/humble/setup.bash && source /ros2_ws/install/setup.bash && ros2 pkg executables sensores"
 ```
 
-3) Ejecuta el driver del Pixhawk (ajusta `serial_port` si hace falta):
+Smoke de launches:
 ```bash
-./tools/exec.sh "source /ros2_ws/install/setup.bash; ros2 run sensores pixhawk_driver --ros-args -p serial_port:=/dev/ttyACM0 -p baudrate:=921600"
+./tools/exec.sh "source /opt/ros/humble/setup.bash && source /ros2_ws/install/setup.bash && ros2 launch navegacion_gps real.launch.py --show-args"
+./tools/exec.sh "source /opt/ros/humble/setup.bash && source /ros2_ws/install/setup.bash && ros2 launch navegacion_gps simulacion.launch.py --show-args"
+./tools/exec.sh "source /opt/ros/humble/setup.bash && source /ros2_ws/install/setup.bash && ros2 launch navegacion_gps rviz_real.launch.py --show-args"
 ```
 
-4) En otra terminal, verifica la IMU:
-```bash
-./tools/exec.sh "source /ros2_ws/install/setup.bash; ros2 topic list | grep imu"
-./tools/exec.sh "source /ros2_ws/install/setup.bash; ros2 topic hz /imu/data"
-./tools/exec.sh "source /ros2_ws/install/setup.bash; ros2 topic echo /imu/data --qos-profile sensor_data --once"
-```
-
-Si ves `Permission denied` en `/dev/ttyACM0`, verifica que el contenedor tenga `dialout` (GID 20) en `docker-compose.yml`
-o ejecuta temporalmente con `./tools/root-exec.sh`.
-
-## Detalles del contenedor
-- Imagen base: `ros:humble-perception`
-- Nombre del contenedor: `ros2`
-- Red: `host`
-- Privileged: `true`
-- Volúmenes: `src`, `build`, `install`, `log`, `/dev` y sockets X11
-- Entorno: `TURTLEBOT3_MODEL=waffle`, `RCUTILS_COLORIZED_OUTPUT=1`
-- Paquetes extra: Nav2, Mapviz, MAVROS, ros2_control, ackermann, ros-gz
-
-## Instalar paquetes extra
-Si necesitas agregar más paquetes o dependencias al contenedor, hazlo a partir de la línea 80 del `Dockerfile` (sección `# PAQUETES EXTRA`). Así aprovechas la caché y evitas reconstruir todo el contenedor, ahorrando tiempo.
-
-## Mapviz
-El archivo `mapviz_gps.mvc` se copia dentro del contenedor en `/home/ros/.mapviz_config`.
-
-En **amd64**, el Dockerfile instala Mapviz por `apt` automáticamente.
-En **ARM64 (Raspberry Pi)**, **no se instala Mapviz** por defecto (entorno headless).
+## Notas
+- `rslidar_sdk` y `rslidar_msg` se mantienen como terceros vendorizados; su documentación upstream puede no reflejar exactamente este workspace.
+- Algunos scripts manuales en `tools/` conservan nombres o supuestos viejos. No tomarlos como fuente de verdad sin revisar el código actual.
