@@ -8,6 +8,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(builtin_interfaces REQUIRED)
+find_package(diagnostic_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
@@ -16,6 +17,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/NoGoZone.msg"
   "msg/NavSnapshotLayers.msg"
   "msg/NavTelemetry.msg"
+  "msg/NavEvent.msg"
   "srv/SetZonesGeoJson.srv"
   "srv/GetZonesState.srv"
   "srv/SetKeepoutZones.srv"
@@ -29,7 +31,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/GetNavSnapshot.srv"
   "srv/CameraPan.srv"
   "srv/CameraStatus.srv"
-  DEPENDENCIES builtin_interfaces geometry_msgs
+  DEPENDENCIES builtin_interfaces diagnostic_msgs geometry_msgs
 )
 
 ament_export_dependencies(rosidl_default_runtime)
