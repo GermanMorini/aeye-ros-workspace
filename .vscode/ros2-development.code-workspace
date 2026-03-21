@@ -137,7 +137,7 @@
 			{
 				"label": "🖥️ LANZAR SIMULACION",
 				"type": "shell",
-				"command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py",
+				"command": "sh tools/exec.sh ros2 launch navegacion_gps sim_local_v2.launch.py",
 				"problemMatcher": []
 			},
 			{
