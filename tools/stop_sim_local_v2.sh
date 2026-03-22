@@ -2,7 +2,7 @@
 set -euo pipefail
 
 CONTAINER="ros2"
-PATTERN='ign gazebo|ros_gz_bridge|ros_gz_sim/create|sim_local_v2.launch.py|sim_v2_base.launch.py|sim_drive_telemetry|sim_sensor_normalizer_v2|cmd_vel_ackermann_bridge_v2|ackermann_odometry|ekf_filter_node_local_v2|lifecycle_manager_local_navigation_v2|nav2_local_v2_params.yaml|collision_monitor_v2.yaml|goal_pose_to_follow_path_v2'
+PATTERN='ign gazebo|ros_gz_bridge|ros_gz_sim/create|sim_local_v2.launch.py|sim_v2_base.launch.py|sim_sensor_normalizer_v2|vehicle_controller_server|controller_server_node|nav_command_server|ackermann_odometry|ekf_filter_node_local_v2|lifecycle_manager_local_navigation_v2|collision_monitor_lifecycle_manager_local_v2|nav2_local_v2_params.yaml|collision_monitor_v2.yaml|planner_server|controller_server|smoother_server|bt_navigator|behavior_server|waypoint_follower'
 
 if ! docker ps --format '{{.Names}}' | grep -qx "${CONTAINER}"; then
   echo "El contenedor ${CONTAINER} no esta corriendo."
@@ -28,5 +28,24 @@ docker exec "${CONTAINER}" bash -lc "
     fi
   fi
 "
+
+host_pids=$(ps -eo pid=,args= | grep -E "${PATTERN}|gz sim" | grep -v grep | awk '{print $1}' || true)
+if [ -n "${host_pids}" ]; then
+  kill ${host_pids} || true
+  sleep 2
+fi
+
+remaining_host=$(ps -eo pid=,args= | grep -E "${PATTERN}|gz sim" | grep -v grep || true)
+if [ -n "${remaining_host}" ]; then
+  remaining_host_pids=$(printf '%s\n' "${remaining_host}" | awk '{print $1}')
+  kill -9 ${remaining_host_pids} || true
+  sleep 1
+  remaining_host=$(ps -eo pid=,args= | grep -E "${PATTERN}|gz sim" | grep -v grep || true)
+  if [ -n "${remaining_host}" ]; then
+    echo "Aun quedan procesos de simulacion en host:" >&2
+    echo "${remaining_host}" >&2
+    exit 3
+  fi
+fi
 
 echo "Simulacion v2 detenida."
