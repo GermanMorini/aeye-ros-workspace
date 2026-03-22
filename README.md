@@ -17,6 +17,7 @@ Cada paquete bajo `src/` es un repositorio git anidado. Revisa estado y rama por
 
 ## Launches canónicos
 - `ros2 launch navegacion_gps simulacion.launch.py`
+- `ros2 launch navegacion_gps sim_global_v2.launch.py`
 - `ros2 launch navegacion_gps real.launch.py`
 - `ros2 launch navegacion_gps rviz_real.launch.py`
 - `ros2 launch sensores pixhawk.launch.py`
@@ -55,6 +56,8 @@ docker compose up -d --build
 - `./tools/exec.sh`: shell o comando dentro del contenedor.
 - `./tools/root-exec.sh`: shell como root dentro del contenedor.
 - `./tools/compile-ros.sh`: build con `colcon`.
+- `./tools/check_sim_global_drift.sh`: mide deriva en reposo de una sesion activa de `sim_global_v2`.
+- `./tools/launch_sim_global_v2.sh`: levanta `navegacion_gps sim_global_v2.launch.py`.
 - `./tools/launch_real_nav.sh`: levanta `navegacion_gps real.launch.py`.
 - `./tools/launch_real_rviz.sh`: levanta `navegacion_gps rviz_real.launch.py`.
 - `./tools/launch_controller.sh`: levanta `controller_server controller_server.launch.py`.
@@ -76,6 +79,7 @@ Smoke de ejecutables:
 
 Smoke de launches:
 ```bash
+./tools/exec.sh "source /opt/ros/humble/setup.bash && source /ros2_ws/install/setup.bash && ros2 launch navegacion_gps sim_global_v2.launch.py --show-args"
 ./tools/exec.sh "source /opt/ros/humble/setup.bash && source /ros2_ws/install/setup.bash && ros2 launch navegacion_gps real.launch.py --show-args"
 ./tools/exec.sh "source /opt/ros/humble/setup.bash && source /ros2_ws/install/setup.bash && ros2 launch navegacion_gps simulacion.launch.py --show-args"
 ./tools/exec.sh "source /opt/ros/humble/setup.bash && source /ros2_ws/install/setup.bash && ros2 launch navegacion_gps rviz_real.launch.py --show-args"
@@ -84,3 +88,4 @@ Smoke de launches:
 ## Notas
 - `rslidar_sdk` y `rslidar_msg` se mantienen como terceros vendorizados; su documentación upstream puede no reflejar exactamente este workspace.
 - Algunos scripts manuales en `tools/` conservan nombres o supuestos viejos. No tomarlos como fuente de verdad sin revisar el código actual.
+- `sim_global_v2` ya no expone presets alternativos de localización global. El único camino soportado es el corregido, documentado en [GLOBAL_NAV_V2.md](/home/leo/codigo/aeye-ros-workspace/src/navegacion_gps/GLOBAL_NAV_V2.md), para evitar reintroducir el runaway histórico de `map -> odom`.
