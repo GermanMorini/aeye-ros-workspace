@@ -137,7 +137,11 @@
 			{
 				"label": "🖥️ LANZAR SIMULACION",
 				"type": "shell",
-				"command": "sh tools/exec.sh ros2 launch navegacion_gps sim_local_v2.launch.py",
+				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=local ekf_global:=False",
+				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=global ekf_global:=True",
+				"command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True",
+				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=global ekf_global:=True ekf_local:=False",
+				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=local ekf_global:=True",
 				"problemMatcher": []
 			},
 			{

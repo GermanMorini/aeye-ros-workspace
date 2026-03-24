@@ -30,6 +30,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/SetManualCmd.srv"
   "srv/GetNavState.srv"
   "srv/GetNavSnapshot.srv"
+  "srv/SetDatum.srv"
+  "srv/GetDatum.srv"
   "srv/CameraPan.srv"
   "srv/CameraStatus.srv"
   DEPENDENCIES builtin_interfaces diagnostic_msgs geometry_msgs
