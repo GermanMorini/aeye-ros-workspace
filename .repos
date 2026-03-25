@@ -2,9 +2,11 @@ repositories:
   .:
     type: git
     url: git@github.com:GermanMorini/aeye-ros-workspace.git
+    version: sim-real-parity
   src/navegacion_gps:
     type: git
     url: git@github.com:GermanMorini/aeye-navegacion.git
+    version: sim-real-parity
   src/rslidar_msg:
     type: git
     url: https://github.com/RoboSense-LiDAR/rslidar_msg
@@ -14,9 +16,12 @@ repositories:
   src/sensores:
     type: git
     url: git@github.com:GermanMorini/aeye-sensores.git
+    version: main
   src/map_tools:
     type: git
     url: git@github.com:GermanMorini/aeye-map-tools.git
+    version: sim-real-parity
   src/controller_server:
     type: git
     url: git@github.com:GermanMorini/aeye-controller-server.git
+    version: sim-real-parity
