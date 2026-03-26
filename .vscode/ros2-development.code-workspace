@@ -114,7 +114,7 @@
 			{
 				"label": "🖼️ VER FRAMES",
 				"type": "shell",
-				"command": "sh tools/exec.sh ros2 run tf2_tools view_frames",
+				"command": "./tools/exec.sh 'cd log && ros2 run tf2_tools view_frames'",
 				"problemMatcher": []
 			},
 			{
@@ -138,38 +138,44 @@
 			{
 				"label": "⚙️ COMPILAR ROS",
 				"type": "shell",
-				"command": "sh tools/compile-ros.sh",
+				"command": "./tools/compile-ros.sh",
 				"problemMatcher": []
 			},
 			{
 				"label": "🖥️ LANZAR SIMULACION",
 				"type": "shell",
-				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=local ekf_global:=False",
-				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=global ekf_global:=True",
-				"command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True datum_setter:=True",
-				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True",
-				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_local:=False ekf_global:=True datum_setter:=True",
-				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=global ekf_global:=True ekf_local:=False",
-				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=local ekf_global:=True",
+				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=local ekf_global:=False",
+				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=global ekf_global:=True",
+				"command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True datum_setter:=True",
+				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True",
+				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_local:=False ekf_global:=True datum_setter:=True",
+				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=global ekf_global:=True ekf_local:=False",
+				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=local ekf_global:=True",
 				"problemMatcher": []
 			},
 			{
 				"label": "📌 LANZAR NAVEGACION (real.launch.py)",
 				"type": "shell",
-				// "command": "sh tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_global:=False zones_manager:=False enable_rtk:=True ukf:=True",
-				"command": "sh tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_global:=False zones_manager:=False enable_rtk:=True",
+				// "command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_local:=False zones_manager:=False enable_rtk:=True ukf:=True",
+				"command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_local:=False zones_manager:=False enable_rtk:=True",
+				"problemMatcher": []
+			},
+			{
+				"label": "⚙️ LANZAR CONTROLADOR (launch_controller.sh)",
+				"type": "shell",
+				"command": "./tools/launch_controller.sh",
 				"problemMatcher": []
 			},
 			{
 				"label": "📐 RVIZ",
 				"type": "shell",
-				"command": "sh tools/launch_real_rviz.sh",
+				"command": "./tools/launch_real_rviz.sh",
 				"problemMatcher": []
 			},
 			{
 				"label": "⌨️ TELEOP TWIST KEYBOARD",
 				"type": "shell",
-				"command": "sh tools/exec.sh ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/cmd_vel_safe",
+				"command": "./tools/exec.sh ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r cmd_vel:=/cmd_vel_safe",
 				"problemMatcher": []
 			}
 		],

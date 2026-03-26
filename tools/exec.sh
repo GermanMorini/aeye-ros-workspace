@@ -8,7 +8,7 @@ set -euo pipefail
 
 CONTAINER="ros2"
 
-if [[ $# -eq 0 ]]; then
+if [ "$#" -eq 0 ]; then
   docker exec -it "${CONTAINER}" bash
   exit 0
 fi
