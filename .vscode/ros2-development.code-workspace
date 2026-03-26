@@ -78,10 +78,17 @@
 				"problemMatcher": []
 			},
 			{
-				"label": "⏬ VCS import/pull",
-				"detail": "Actualiza workspace y repos en src usando vcs + .repos",
+				"label": "🧑‍🤝‍🧑 VCS clone",
+				"detail": "Clona repos en src usando vcs + .repos",
 				"type": "shell",
-				"command": "${workspaceFolder}/tools/vcs-import.sh",
+				"command": "${workspaceFolder}/tools/vcs-clone.sh",
+				"problemMatcher": []
+			},
+			{
+				"label": "⏬ VCS pull",
+				"detail": "Actualiza workspace haciendo pull",
+				"type": "shell",
+				"command": "${workspaceFolder}/tools/vcs-pull.sh",
 				"problemMatcher": []
 			},
 			{
