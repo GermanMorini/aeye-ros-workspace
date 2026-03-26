@@ -78,7 +78,7 @@
 				"problemMatcher": []
 			},
 			{
-				"label": "🔄 VCS import/pull",
+				"label": "⏬ VCS import/pull",
 				"detail": "Actualiza workspace y repos en src usando vcs + .repos",
 				"type": "shell",
 				"command": "${workspaceFolder}/tools/vcs-import.sh",
@@ -92,7 +92,7 @@
 				"problemMatcher": []
 			},
 			{
-				"label": "📤 VCS Push",
+				"label": "⏫ VCS Push",
 				"detail": "Hace push del workspace y de los repos en src",
 				"type": "shell",
 				"command": "${workspaceFolder}/tools/vcs-push.sh",
@@ -139,15 +139,23 @@
 				"type": "shell",
 				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=local ekf_global:=False",
 				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=global ekf_global:=True",
-				"command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True",
+				"command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True datum_setter:=True",
+				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True",
+				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_local:=False ekf_global:=True datum_setter:=True",
 				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=global ekf_global:=True ekf_local:=False",
 				// "command": "sh tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=local ekf_global:=True",
 				"problemMatcher": []
 			},
 			{
-				"label": "📐 EDITOR DE POLIGONOS",
+				"label": "📌 LANZAR NAVEGACION (real.launch.py)",
 				"type": "shell",
-				"command": "sh tools/exec.sh ros2 launch map_tools no_go_editor.launch.py",
+				"command": "sh tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_global:=False zones_manager:=False enable_rtk:=True",
+				"problemMatcher": []
+			},
+			{
+				"label": "📐 RVIZ",
+				"type": "shell",
+				"command": "sh tools/launch_real_rviz.sh",
 				"problemMatcher": []
 			},
 			{
