@@ -117,13 +117,13 @@
 				"problemMatcher": []
 			},
 			{
-				"label": "🚀 LEVANTAR DOCKER",
+				"label": "🚀 DOCKER UP",
 				"type": "shell",
 				"command": "docker compose up -d",
 				"problemMatcher": []
 			},
 			{
-				"label": "❌ DETENER DOCKER",
+				"label": "❌ DOCKER DOWN",
 				"type": "shell",
 				"command": "docker compose down",
 				"problemMatcher": []
@@ -149,6 +149,7 @@
 			{
 				"label": "📌 LANZAR NAVEGACION (real.launch.py)",
 				"type": "shell",
+				// "command": "sh tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_global:=False zones_manager:=False enable_rtk:=True ukf:=True",
 				"command": "sh tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_global:=False zones_manager:=False enable_rtk:=True",
 				"problemMatcher": []
 			},
