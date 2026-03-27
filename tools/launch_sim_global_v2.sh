@@ -12,7 +12,7 @@ fi
 
 docker exec "${CONTAINER}" bash -lc "
   mkdir -p /ros2_ws/logs
-  nohup bash -lc 'source /opt/ros/humble/setup.bash; source /ros2_ws/install/setup.bash; ros2 launch navegacion_gps sim_global_v2.launch.py' \
+  nohup bash -lc 'source /opt/ros/humble/setup.bash; source /ros2_ws/install/setup.bash; ros2 launch navegacion_gps sim_global_v2.launch.py gps_profile:=f9p_rtk launch_web_app:=False use_keepout:=False' \
     </dev/null >/ros2_ws/logs/sim_global_v2.log 2>&1 &
 "
 
