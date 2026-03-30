@@ -157,7 +157,9 @@
 				"label": "📌 LANZAR NAVEGACION (real.launch.py)",
 				"type": "shell",
 				// "command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_local:=False zones_manager:=False enable_rtk:=True ukf:=True",
-				"command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_local:=False zones_manager:=False enable_rtk:=True",
+				// "command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_local:=False ekf_global:=True zones_manager:=False datum_setter:=True ukf:=True enable_gps_course_heading:=True gps_course_heading_enable_consistency_filters:=True gps_course_heading_enable_offset_compensation:=True",
+				// "command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_global:=True zones_manager:=False datum_setter:=True ukf:=False enable_gps_course_heading:=True gps_course_heading_enable_consistency_filters:=True gps_course_heading_enable_offset_compensation:=True",
+				"command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_global:=True zones_manager:=False datum_setter:=True ukf:=True enable_gps_course_heading:=True gps_course_heading_enable_consistency_filters:=True gps_course_heading_enable_offset_compensation:=True",
 				"problemMatcher": []
 			},
 			{
