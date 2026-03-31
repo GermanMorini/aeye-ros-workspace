@@ -144,13 +144,7 @@
 			{
 				"label": "🖥️ LANZAR SIMULACION",
 				"type": "shell",
-				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=local ekf_global:=False",
-				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=global ekf_global:=True",
-				"command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True datum_setter:=True",
-				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True",
-				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_local:=False ekf_global:=True datum_setter:=True",
-				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=global ekf_global:=True ekf_local:=False",
-				// "command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py rviz_conf:=local ekf_global:=True",
+				"command": "./tools/exec.sh ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True datum_setter:=True zones_manager:=False ukf:=True",
 				"problemMatcher": []
 			},
 			{
@@ -159,7 +153,9 @@
 				// "command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_local:=False zones_manager:=False enable_rtk:=True ukf:=True",
 				// "command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_local:=False ekf_global:=True zones_manager:=False datum_setter:=True ukf:=True enable_gps_course_heading:=True gps_course_heading_enable_consistency_filters:=True gps_course_heading_enable_offset_compensation:=True",
 				// "command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_global:=True zones_manager:=False datum_setter:=True ukf:=False enable_gps_course_heading:=True gps_course_heading_enable_consistency_filters:=True gps_course_heading_enable_offset_compensation:=True",
-				"command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_global:=True zones_manager:=False datum_setter:=True ukf:=True enable_gps_course_heading:=True gps_course_heading_enable_consistency_filters:=True gps_course_heading_enable_offset_compensation:=True",
+				// "command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py ekf_global:=True zones_manager:=False datum_setter:=True ukf:=True enable_gps_course_heading:=True gps_course_heading_enable_consistency_filters:=True gps_course_heading_enable_offset_compensation:=True use_robot_state_publisher:=True",
+/* PROBAR 1	*/	"command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py datum_setter:=True zones_manager:=False use_robot_state_publisher:=True",
+/* PROBAR 2	*/	// "command": "./tools/exec.sh ros2 launch navegacion_gps real.launch.py datum_setter:=True zones_manager:=False use_robot_state_publisher:=True enable_rtk:=true enable_rtk_source_manager:=true",
 				"problemMatcher": []
 			},
 			{
