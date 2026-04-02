@@ -1,5 +1,7 @@
 bool goal_active
 bool manual_enabled
+bool control_locked
+string control_lock_reason
 string auto_mode
 string active_action
 float64 manual_linear_x_cmd

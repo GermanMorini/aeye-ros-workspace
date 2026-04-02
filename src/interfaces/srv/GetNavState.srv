@@ -3,6 +3,8 @@ bool ok
 string error
 bool goal_active
 bool manual_enabled
+bool control_locked
+string control_lock_reason
 float64 manual_linear_x_cmd
 float64 manual_angular_z_cmd
 bool cmd_vel_available

@@ -27,6 +27,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/CancelNavGoal.srv"
   "srv/BrakeNav.srv"
   "srv/SetManualMode.srv"
+  "srv/SetControlLock.srv"
+  "srv/TouchControlHeartbeat.srv"
   "srv/SetManualCmd.srv"
   "srv/GetNavState.srv"
   "srv/GetNavSnapshot.srv"
