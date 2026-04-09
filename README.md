@@ -39,7 +39,7 @@ Cada paquete bajo `src/` es un repositorio git anidado. Revisa estado y rama por
 ## Flujo Docker recomendado
 1. Levanta el contenedor:
 ```bash
-docker compose up -d --build
+docker compose up -d --build ros2
 ```
 2. Compila el workspace o paquetes puntuales:
 ```bash
@@ -57,9 +57,31 @@ docker compose up -d --build
 - `./tools/compile-ros.sh`: build con `colcon`.
 - `./tools/launch_real_nav.sh`: levanta `navegacion_gps real.launch.py`.
 - `./tools/launch_real_rviz.sh`: levanta `navegacion_gps rviz_real.launch.py`.
+- `./tools/launch_sim_local_v2.sh`: levanta la simulación local v2 (`sim german`, 1 GPS).
 - `./tools/launch_controller.sh`: levanta `controller_server controller_server.launch.py`.
 - `./tools/launch_no_go_editor.sh`: levanta `map_tools no_go_editor.launch.py`.
 - `./tools/healthcheck-lidar.sh`: chequeo rápido de `/scan_3d`, `/scan` y TF.
+- `./tools/record_nav_debug_bag.sh [core|full_nav2|sim_german_1gps]`: graba tópicos y los deja persistidos en `./bags/`.
+- `./tools/play_nav_debug_bag.sh <bag_dir>`: reproduce un bag guardado en `./bags/` con `/clock`.
+
+## Record y Replay de tópicos
+Los rosbags se guardan en `./bags/` del repo y se montan dentro del contenedor en `/ros2_ws/bags`, así se pueden reproducir después sin perderlos al recrear el contenedor.
+
+Perfil recomendado para la parte de 1 GPS en `sim german` (`sim_local_v2.launch.py`):
+```bash
+docker compose up -d ros2
+./tools/launch_sim_local_v2.sh
+./tools/record_nav_debug_bag.sh sim_german_1gps
+```
+
+Ese perfil incluye `/clock` y las entradas/salidas relevantes de la simulación 1 GPS, incluyendo `/gps/fix_raw`, `/imu/data_raw`, `/scan_3d_raw`, `/odom_raw`, `/joint_states`, `/controller/drive_telemetry`, `/odometry/local` y los comandos de navegación.
+
+Reproducir:
+```bash
+./tools/play_nav_debug_bag.sh nav_debug_sim_german_1gps_YYYYMMDD_HHMMSS
+```
+
+Para levantar nodos contra el replay, usar `use_sim_time:=True`.
 
 ## Validación sugerida
 Build mínimo dentro del contenedor:

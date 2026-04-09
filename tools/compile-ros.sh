@@ -20,7 +20,14 @@ fi
 
 echo "Compilando ${TARGET_MSG} dentro del contenedor '${CONTAINER}'..."
 
-docker exec -it "${CONTAINER}" bash -lc "\
+# Compilamos como root porque los bind mounts de build/install/log quedan
+# expuestos como root dentro del contenedor aunque el usuario del host sea 1000.
+DOCKER_TTY_FLAGS=()
+if [[ -t 0 && -t 1 ]]; then
+  DOCKER_TTY_FLAGS=(-it)
+fi
+
+docker exec -u 0 "${DOCKER_TTY_FLAGS[@]}" "${CONTAINER}" bash -lc "\
   # Dentro del contenedor evitamos '-u' porque los setup.bash de ROS usan vars no definidas
   set -eo pipefail && \
   source /opt/ros/\${ROS_DISTRO:-humble}/setup.bash && \

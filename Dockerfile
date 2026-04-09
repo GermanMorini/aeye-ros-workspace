@@ -100,7 +100,8 @@ ARG USERNAME=ros
 ARG USER_UID=1000
 ARG USER_GID=1000
 
-RUN groupadd --gid ${USER_GID} ${USERNAME} \
+RUN if ! getent group 986 >/dev/null; then groupadd --gid 986 hostgrp986; fi \
+  && groupadd --gid ${USER_GID} ${USERNAME} \
   && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} \
   && groupadd --gid 20 dialout || true \
   && usermod -aG dialout,tty ${USERNAME} \
