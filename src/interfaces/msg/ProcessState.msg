@@ -1,0 +1,2 @@
+interfaces/ProcessDefinition process
+bool running

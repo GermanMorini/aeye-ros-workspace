@@ -1,0 +1,8 @@
+string process
+bool output
+---
+bool ok
+string error
+---
+string stream
+string data
