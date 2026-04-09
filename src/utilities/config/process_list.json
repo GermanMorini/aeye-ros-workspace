@@ -1,0 +1,9 @@
+{
+  "process_list": [
+    {
+      "label": "🖥️ LANZAR SIMULACION",
+      "command": "ros2 launch navegacion_gps simulacion.launch.py ekf_global:=True datum_setter:=True ukf:=True",
+      "cwd": "/ros2_ws"
+    }
+  ]
+}
